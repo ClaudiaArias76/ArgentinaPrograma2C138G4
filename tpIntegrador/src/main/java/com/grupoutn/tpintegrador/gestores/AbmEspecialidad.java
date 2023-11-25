@@ -11,7 +11,9 @@ public class AbmEspecialidad {
     public AbmEspecialidad() {
         this.pe = new PersistenciaEspecialidad();
     }
-    public void agregarEspecialidad(Scanner scanner) {
+    public void agregarEspecialidad() {
+        
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Ingrese el nombre de la especialidad: ");
         String nombre = scanner.next();
 

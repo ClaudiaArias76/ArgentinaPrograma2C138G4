@@ -12,7 +12,9 @@ public class AbmServicio {
     public AbmServicio() {
         this.se = new PersistenciaServicio();
     }
-    public void agregarServicio(Scanner scanner) {
+    public void agregarServicio() {
+        
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Ingrese el nombre del servicio: ");
         String nombre = scanner.next();
 

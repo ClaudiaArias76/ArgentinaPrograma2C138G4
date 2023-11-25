@@ -13,7 +13,9 @@ public class AbmPersona {
         this.pe = new PersistenciaPersona();
     }
 
-    public void agregarCliente(Scanner scanner) {
+    public void agregarCliente() {
+        
+        Scanner scanner = new Scanner(System.in);
         Cliente cliente = new Cliente();
         System.out.print("Ingrese el nombre del cliente: ");
         String nombreCliente = scanner.next();
@@ -34,7 +36,9 @@ public class AbmPersona {
         System.out.println("Cliente agregado con éxito.\n");
     }
 
-    public void agregarTecnico(Scanner scanner) {
+    public void agregarTecnico() {
+        
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Ingrese el nombre del tecnico: ");
         String nombre = scanner.next();
 
