@@ -12,7 +12,7 @@ public class PersistenciaEspecialidad {
     @PersistenceContext
     private EntityManager em;
 
-    public Especialidad buscarUna(int numero) {
+    public Especialidad buscarUna(long numero) {
         return em.find(Especialidad.class, numero);
     }
     public List<Especialidad> buscarEspecialidades(){

@@ -5,7 +5,6 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="persona")
 @Inheritance(strategy= InheritanceType.SINGLE_TABLE)
 public class Persona {
     @Id
@@ -14,6 +13,7 @@ public class Persona {
     private long id;
     private String dni;
     private String nombre;
+
 
     public Persona(String dni, String nombre ) {
         this.dni = dni;

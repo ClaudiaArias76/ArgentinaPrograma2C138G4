@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="persona")
+@Table(name = "persona")
 public class Cliente extends Persona{
     private String razonSocial;
     private String cuit;

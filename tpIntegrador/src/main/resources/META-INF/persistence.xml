@@ -8,6 +8,8 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
         <class>com.grupoutn.tpintegrador.Especialidad</class>
         <class>com.grupoutn.tpintegrador.Persona</class>
         <class>com.grupoutn.tpintegrador.Servicio</class>
+        <class>com.grupoutn.tpintegrador.Tecnico</class>
+        <class>com.grupoutn.tpintegrador.Cliente</class>
          <properties>
             <property name="javax.persistence.jdbc.url"  value="jdbc:mysql://localhost:3306/tpgrupo4?zeroDateTimeBehavior=convertToNull&amp;serverTimezone=UTC"/>
             <property name="javax.persistence.jdbc.user" value="tpgrupo4"/>

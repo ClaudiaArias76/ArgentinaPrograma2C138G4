@@ -30,7 +30,7 @@ public class Menu {
     }
     
      public void MenuPrincipal() {
-        
+         EntityManager em = getEntityManager();
          
         Scanner scanner = new Scanner(System.in);        
         int opcion;
@@ -50,22 +50,22 @@ public class Menu {
                 case 1:
                     System.out.println("Gestionar Clientes");
                     // Lógica para gestionar clientes
-                    MenuClientes();
+                    MenuClientes(em);
                     break;
                 case 2:
                     System.out.println("Gestionar Técnicos");
                     // Lógica para gestionar técnicos
-                    MenuTecnicos();
+                    MenuTecnicos(em);
                     break;
                 case 3:
                     System.out.println("Gestionar Especialidades");
                     // Lógica para gestionar especialidades
-                    MenuEspecialidades();
+                    MenuEspecialidades(em);
                     break;
                 case 4:
                     System.out.println("Gestionar Servicios");
                     // Lógica para gestionar incidentes
-                    MenuServicios();
+                    MenuServicios(em);
                     break;
                 case 5:
                     System.out.println("Saliendo del programa. ¡Hasta luego!");
@@ -77,9 +77,9 @@ public class Menu {
      
     }
      
-    public void MenuClientes() {
+    public void MenuClientes(EntityManager em) {
         
-        EntityManager em = getEntityManager();
+
         AbmPersona per = new AbmPersona();
         per.getPe().setEm(em);
         Scanner scanner = new Scanner(System.in);
@@ -125,9 +125,9 @@ public class Menu {
         } while (opcion != 5);
     }
     
-    public void MenuTecnicos() {
+    public void MenuTecnicos(EntityManager em) {
         
-        EntityManager em = getEntityManager();
+
         AbmPersona per = new AbmPersona();
         per.getPe().setEm(em);
         
@@ -175,13 +175,11 @@ public class Menu {
         
     }
     
-     public void MenuServicios() {
-         
-        EntityManager em = getEntityManager();
+     public void MenuServicios(EntityManager em ) {
+
         AbmServicio per = new AbmServicio();
         per.getSe().setEm(em);
-         
-        
+
         Scanner scanner = new Scanner(System.in);
         int opcion;
         do {
@@ -225,9 +223,8 @@ public class Menu {
         
     }
     
-    public void MenuEspecialidades() {
-        
-        EntityManager em = getEntityManager();
+    public void MenuEspecialidades(EntityManager em) {
+
         AbmEspecialidad per = new AbmEspecialidad();
         per.getPe().setEm(em);
         
@@ -261,9 +258,7 @@ public class Menu {
                  case 4:
                     System.out.println("Mostrar Especialidades");
                     per.mostrarEspecialidades();
-                    break;    
-                
-                
+                    break;
                 case 5:
                     System.out.println("Volviendo al Menu Anterior!");
                     break;

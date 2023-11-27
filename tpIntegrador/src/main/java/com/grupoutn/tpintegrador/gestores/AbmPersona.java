@@ -1,6 +1,7 @@
 package com.grupoutn.tpintegrador.gestores;
 
 import com.grupoutn.tpintegrador.Cliente;
+import com.grupoutn.tpintegrador.Especialidad;
 import com.grupoutn.tpintegrador.Tecnico;
 import lombok.Data;
 import java.util.Scanner;
@@ -28,7 +29,7 @@ public class AbmPersona {
         System.out.print("Ingrese el cuit: ");
         nombreCliente = scanner.next();
         cliente.setCuit(nombreCliente);
-
+        cliente.setDni(nombreCliente);
         pe.getEm().getTransaction().begin();
         pe.insertar(cliente);
         pe.getEm().getTransaction().commit();
@@ -37,19 +38,31 @@ public class AbmPersona {
     }
 
     public void agregarTecnico() {
-        
+        Tecnico tecnico = new Tecnico();
         Scanner scanner = new Scanner(System.in);
         System.out.print("Ingrese el nombre del tecnico: ");
         String nombre = scanner.next();
-
-        Tecnico tecnico = new Tecnico();
         tecnico.setNombre(nombre);
+
+        System.out.print("Ingrese el dni: ");
+        nombre  = scanner.next();
+        tecnico.setDni(nombre);
+
         System.out.print("Ingrese el nro celular: ");
-        int celu = scanner.nextInt();
-        tecnico.setCelular(celu);
+        nombre = scanner.next();
+        tecnico.setCelular(nombre);
+
         System.out.print("Ingrese el e-mail: ");
         nombre = scanner.next();
         tecnico.setMail(nombre);
+
+        AbmEspecialidad abmEspe = new AbmEspecialidad();
+        abmEspe.mostrarEspecialidades();
+        System.out.print("Seleccione una especialidad al técnico: ");
+        long l =  scanner.nextLong();
+        Especialidad espe = abmEspe.getPe().buscarUna(l);
+        tecnico.agregarEspecialidad(espe);
+
         pe.getEm().getTransaction().begin();
         pe.insertar(tecnico);
         pe.getEm().getTransaction().commit();
