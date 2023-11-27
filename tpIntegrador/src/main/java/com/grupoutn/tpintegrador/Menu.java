@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.grupoutn.tpintegrador;
 
-/**
- *
- * @author Gustavo
- */
 
 import com.grupoutn.tpintegrador.gestores.AbmPersona;
 import com.grupoutn.tpintegrador.gestores.AbmEspecialidad;
@@ -40,8 +33,9 @@ public class Menu {
             System.out.println("1. Gestionar Clientes");
             System.out.println("2. Gestionar Técnicos");
             System.out.println("3. Gestionar Especialidades");
-            System.out.println("4. Gestionar Incidentes");
-            System.out.println("5. Salir");
+            System.out.println("4. Gestionar Servicios");
+            System.out.println("5. Gestionar Incidentes");
+            System.out.println("6. Salir");
             System.out.println("==========================");
             System.out.print("Selecciona una opción: ");
             opcion = scanner.nextInt();
@@ -68,13 +62,18 @@ public class Menu {
                     MenuServicios(em);
                     break;
                 case 5:
+                    System.out.println("Gestionar Incidentes");
+                    // Lógica para gestionar incidentes
+                    MenuIncidentes(em);
+                    break;
+
+                case 6:
                     System.out.println("Saliendo del programa. ¡Hasta luego!");
                     break;
                 default:
                     System.out.println("Opción no válida. Inténtalo de nuevo.");
             }
-        } while (opcion != 5);
-     
+        } while (opcion != 6);
     }
      
     public void MenuClientes(EntityManager em) {
@@ -91,7 +90,7 @@ public class Menu {
             System.out.println("2. Gestionar Bajas");
             System.out.println("3. Gestionar Modificaciones");
             System.out.println("4. Mostrar Clientes");
-            System.out.println("5. Salir");
+            System.out.println("5. Volver al Menú Principal");
             System.out.println("==========================");
             System.out.print("Selecciona una opción: ");
             opcion = scanner.nextInt();
@@ -140,7 +139,7 @@ public class Menu {
             System.out.println("2. Gestionar Bajas");
             System.out.println("3. Gestionar Modificaciones");
             System.out.println("4. Mostrar Tecnicos");
-            System.out.println("5. Salir");
+            System.out.println("5. Volver al Menú Principal");
             System.out.println("==========================");
             System.out.print("Selecciona una opción: ");
             opcion = scanner.nextInt();
@@ -189,7 +188,7 @@ public class Menu {
             System.out.println("2. Gestionar Bajas");
             System.out.println("3. Gestionar Modificaciones");
             System.out.println("4. Mostrar Servicios");
-            System.out.println("5. Salir");
+            System.out.println("5. Volver al Menú Principal");
             System.out.println("==========================");
             System.out.print("Selecciona una opción: ");
             opcion = scanner.nextInt();
@@ -237,7 +236,7 @@ public class Menu {
             System.out.println("2. Gestionar Bajas");
             System.out.println("3. Gestionar Modificaciones");
             System.out.println("4. Mostrar Especialidades");
-            System.out.println("5. Salir");
+            System.out.println("5. Volver al Menú Principal");
             System.out.println("==========================");
             System.out.print("Selecciona una opción: ");
             opcion = scanner.nextInt();
@@ -269,5 +268,5 @@ public class Menu {
         
     }
     
-    
+    public void MenuIncidentes(EntityManager em){}
 }
